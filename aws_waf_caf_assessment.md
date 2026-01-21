@@ -1,40 +1,40 @@
-# AWS Well-Architected & Cloud Adoption Framework Assessment
+# AWS Well-Architected & Cloud Adoption Framework Review
 
-## Project: Two-Tier Web Application Migration to AWS
-
----
-
-## Task 2 – AWS Well-Architected Framework (WAF) Assessment
-
-| Pillar | Observation | Improvement | Recommendation | Supporting AWS Service |
-|------|-----------|------------|---------------|------------------------|
-| Operational Excellence | Deployment is manual and not repeatable. | Automate infrastructure provisioning and deployments. | Use Infrastructure as Code and CI/CD pipelines. | AWS CloudFormation, CodePipeline, CodeBuild |
-| Security | Network access is loosely defined and could expose resources. | Enforce least-privilege and layered security. | Implement security groups per tier and restrict traffic flow. | Security Groups, IAM, AWS Shield, AWS WAF |
-| Reliability | Single database instance is a single point of failure. | Improve fault tolerance and availability. | Use Multi-AZ architecture and Auto Scaling across AZs. | Amazon RDS Multi-AZ, Auto Scaling, Elastic Load Balancer |
-| Performance Efficiency | Fixed instance sizes limit scalability. | Enable dynamic scaling and performance optimization. | Use Auto Scaling and managed load balancing. | Auto Scaling Groups, Application Load Balancer |
-| Cost Optimization | Always-on resources increase costs. | Optimize resource usage and reduce waste. | Scale on demand and monitor spending. | AWS Cost Explorer, Auto Scaling, AWS Budgets |
+## Project: Migrating a Two-Tier Web Application to AWS
 
 ---
 
-## Task 3 – Cloud Adoption Framework (CAF) Readiness Summary
+## Task 2 – AWS Well-Architected Framework (WAF) Evaluation
+
+| Pillar | Current State | Enhancement | Guidance | Relevant AWS Services |
+|--------|--------------|-------------|---------|----------------------|
+| Operational Excellence | Deployments are performed manually and lack consistency. | Introduce automation for infrastructure setup and application delivery. | Adopt Infrastructure as Code and continuous integration/deployment workflows. | AWS CloudFormation, CodePipeline, CodeBuild |
+| Security | Network permissions are broad, risking exposure of resources. | Strengthen security by applying least privilege and layered controls. | Define security groups for each layer and restrict inter-tier communication. | Security Groups, IAM, AWS Shield, AWS WAF |
+| Reliability | The database is a single point of failure. | Increase resilience and availability. | Implement Multi-AZ deployments and auto scaling across zones. | Amazon RDS Multi-AZ, Auto Scaling, Elastic Load Balancer |
+| Performance Efficiency | Static instance sizes hinder scalability. | Enable flexible scaling and optimize performance. | Utilize Auto Scaling and managed load balancing solutions. | Auto Scaling Groups, Application Load Balancer |
+| Cost Optimization | Resources run continuously, leading to higher costs. | Improve cost efficiency and reduce unnecessary spend. | Scale resources based on demand and monitor usage. | AWS Cost Explorer, Auto Scaling, AWS Budgets |
+
+---
+
+## Task 3 – Cloud Adoption Framework (CAF) Readiness Overview
 
 ### 1. Business Perspective
-The organization shows strong motivation to migrate its two-tier application to AWS to improve scalability and reliability. However, there is limited clarity on business KPIs and success metrics. To ensure alignment, the organization should define measurable outcomes such as availability targets, deployment frequency, and cost optimization goals. AWS services such as AWS Migration Hub and AWS Well-Architected Tool can help align business objectives with technical outcomes and track progress throughout the migration journey.
+The company is motivated to transition its two-tier application to AWS for enhanced scalability and reliability. However, business KPIs and success criteria are not well defined. To ensure objectives are met, measurable goals like uptime, deployment speed, and cost savings should be established. AWS Migration Hub and the Well-Architected Tool can help align business goals with technical deliverables and monitor progress during migration.
 
 ### 2. People Perspective
-The team has basic AWS knowledge but lacks advanced cloud and DevOps skills. Training and enablement are required to ensure engineers can design, deploy, and operate cloud workloads effectively. The organization should invest in structured learning paths, certifications, and hands-on labs. AWS Skill Builder and AWS Training and Certification will help upskill staff and build cloud fluency across teams.
+The technical team possesses foundational AWS skills but needs further expertise in cloud and DevOps practices. Upskilling is necessary to empower engineers to architect, deploy, and manage cloud solutions. Investment in training, certifications, and practical labs is recommended. AWS Skill Builder and AWS Training and Certification can support workforce development and cloud proficiency.
 
 ### 3. Governance Perspective
-Currently, there is limited governance around security, compliance, and cost control. This presents a risk as the cloud environment grows. The organization should establish policies for account structure, tagging, cost management, and security baselines. AWS Organizations, Service Control Policies (SCPs), and AWS Config will help enforce governance and maintain compliance at scale.
+Governance for security, compliance, and cost management is currently minimal, which could become problematic as cloud usage expands. The organization should implement policies for account management, resource tagging, cost tracking, and security standards. AWS Organizations, Service Control Policies, and AWS Config can help enforce governance and maintain compliance.
 
 ### 4. Platform Perspective
-The existing on-prem architecture is not designed for elasticity or high availability. The platform should be redesigned to use AWS native services such as VPC, Application Load Balancer, Auto Scaling Groups, and Amazon RDS Multi-AZ. Infrastructure as Code should be adopted to ensure consistency and repeatability. AWS CloudFormation will enable automated and standardized environment provisioning.
+The current on-premises setup lacks flexibility and high availability. The platform should be re-architected to leverage AWS-native services like VPC, Application Load Balancer, Auto Scaling Groups, and Amazon RDS Multi-AZ. Adopting Infrastructure as Code will ensure consistent and repeatable deployments. AWS CloudFormation can automate and standardize environment provisioning.
 
 ### 5. Security Perspective
-Security is currently perimeter-based and not aligned with a zero-trust model. The cloud design must enforce least privilege, network segmentation, encryption, and monitoring. The organization should implement IAM roles, security groups, AWS WAF, and AWS Shield for protection, along with AWS CloudTrail and GuardDuty for auditing and threat detection.
+Security relies on perimeter defenses and does not follow a zero-trust approach. The cloud architecture should enforce least privilege, segment networks, encrypt data, and enable monitoring. IAM roles, security groups, AWS WAF, and AWS Shield should be implemented for protection, while AWS CloudTrail and GuardDuty provide auditing and threat detection.
 
 ### 6. Operations Perspective
-Operational processes are manual and reactive, leading to slow incident response and inconsistent deployments. The organization should implement monitoring, logging, and automation to improve operational maturity. Amazon CloudWatch, AWS Systems Manager, and AWS Config will enable proactive monitoring, patching, and operational excellence.
+Operations are currently manual and reactive, resulting in slow incident handling and inconsistent releases. The organization should adopt monitoring, logging, and automation to enhance operational maturity. Amazon CloudWatch, AWS Systems Manager, and AWS Config can enable proactive monitoring, automated patching, and operational best practices.
 
 ---
 
